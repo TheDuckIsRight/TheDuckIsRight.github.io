@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!--  Metadata  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="author" content="Thuận, Hưng">
+
+    <!--  CSS Styling  -->
+    <link rel="stylesheet" href="/Code/font.css" type="text/CSS">
+    <link rel="stylesheet" href="/Code/utilities.css" type="text/CSS">
+    <style>
+        ::webkit-scrollbar-button {
+            display: none;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(83, 83, 83, 0.07);
+            background-color: #f1f1f1;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+            background-color: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #FBAB7E;
+
+            /* Lựa màu trên https://www.grabient.com/ */
+            border-radius: 5px;
+            border: 2px solid #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        }
+        :root {
+            --bg-primary: rgb(25, 0, 0);
+            --text-primary: rgb(255, 255, 255);
+            --font-color: rgb(242, 217, 217);
+            --font-color-2: #f5a3a5;
+            --illust-color: #a3a3f5;
+            --tertiary-color: rgb(92, 10, 12);
+            --shadow: rgb(40, 21, 21);
+            background: linear-gradient(var(--bg-primary),var(--shadow),rgb(31, 27, 27), var(--bg-primary));
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+        }
+        /* WORK IN PROGRESS */
+        /* @media (max-width: 768px) {} */
+    </style>
+    <style>
+            .stats-container {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            min-height: 300px;
+            margin: 0 auto;
+        }
+
+        .stats-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.999s;
+        }
+
+        .stat-card:hover .stat-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .stat-card-front,
+        .stat-card-back {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            backface-visibility: hidden;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .stat-card-front {
+            background-color: #f5a3a5;
+            color: #fff;
+            border: 10px solid #f5a3a5;
+            border-radius: 10px;
+            transform: rotateY(0deg);
+        }
+
+        .stat-card-back {
+            background-color: #a3a3f5;
+            color: #fff;
+            border: 10px solid #a3a3f5;
+            border-radius: 10px;
+            transform: rotateY(180deg);
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+            color: gold;
+            text-align: left;
+        }
+
+        .stat-description {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            text-align: left;
+            margin-top: auto;
+        }
+
+        .stat-detail {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+    </style>
+    <link rel="stylesheet" href="/Code/header.css" type="text/CSS">
+    <link rel="stylesheet" href="/Code/timeline.css" type="text/CSS">
+
+    <!--  Javascript -->    
+
+    <!--  Title decoration  -->
+    <title>CR7 HALL OF FAME</title>
+    <link rel="icon" href="/Components/UR Cristiano Ronaldo.svg" type="images/x-icon">
+</head>
+<body>
+    <header class="header">
+        <img class="background_header" src="/Components/cristiano-ronaldo-portugal-france-euro-2016-final_3741701.jpg" alt="" width="" height="850px">
+        <div class="shiny_text smooth" style="font-family: Stangith;">CRISTIANO RONALDO</div>
+        <h3 class="description_header smooth">Anh đến từ hành tinh nào vậy?</h3>
+        <!-- bỏ vì xấu -->
+        <!-- <img class="ronaldo_header_1" src="/Components/ronaldo_realmadrid_nobackground.png" alt="">
+        <img class="ronaldo_header_2" src="/Components/ronaldo_juventus_toppage_nobackground.png" alt="">
+        <img class="ronaldo_header_3" src="/Components/ronaldo-manu-halfbody.png" alt="" height="650px" width=""> -->
+    </header>
+    <main>
+        <section class="stats-container">
+            <h2>Career Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-inner">
+                        <div class="stat-card-front">
+                            <h3>Goals Scored</h3>
+                            <div class="stat-number" data-target="850">0</div>
+                            <p class="stat-description">Career Goals</p>
+                        </div>
+                        <div class="stat-card-back">
+                            <h3>Goal Breakdown</h3>
+                            <p class="stat-detail">• Club Goals: 722</p>
+                            <p class="stat-detail">• International Goals: 128</p>
+                            <p class="stat-detail">• Average: 0.73 goals per game</p>
+                            <p class="stat-detail">• Record holder for most goals in professional football</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-card-inner">
+                        <div class="stat-card-front">
+                            <h3>Champions League</h3>
+                            <div class="stat-number" data-target="5">0</div>
+                            <p class="stat-description">UEFA Champions League Titles</p>
+                        </div>
+                        <div class="stat-card-back">
+                            <h3>UCL Success</h3>
+                            <p class="stat-detail">• Man United: 2008</p>
+                            <p class="stat-detail">• Real Madrid: 2014, 2016, 2017, 2018</p>
+                            <p class="stat-detail">• All-time top scorer: 140 goals</p>
+                            <p class="stat-detail">• Most appearances: 183 matches</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-card-inner">
+                        <div class="stat-card-front">
+                            <h3>Ballon d'Or</h3>
+                            <div class="stat-number" data-target="5">0</div>
+                            <p class="stat-description">Golden Ball Awards</p>
+                        </div>
+                        <div class="stat-card-back">
+                            <h3>Golden Years</h3>
+                            <p class="stat-detail">• First Award: 2008</p>
+                            <p class="stat-detail">• Real Madrid Era: 2013, 2014, 2016, 2017</p>
+                            <p class="stat-detail">• 12 top-three finishes</p>
+                            <p class="stat-detail">• Second-most wins in history</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-card-inner">
+                        <div class="stat-card-front">
+                            <h3>International</h3>
+                            <div class="stat-number" data-target="128">0</div>
+                            <p class="stat-description">Goals for Portugal</p>
+                        </div>
+                        <div class="stat-card-back">
+                            <h3>Portugal Legacy</h3>
+                            <p class="stat-detail">• Most international goals ever</p>
+                            <p class="stat-detail">• 200+ appearances</p>
+                            <p class="stat-detail">• Euro 2016 Champion</p>
+                            <p class="stat-detail">• Nations League 2019 Winner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="timeline">
+            <h2>Career Milestones</h2>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="year">2003</div>
+                    <p>Kí hợp đồng với Manchester United, bắt đầu hành trình của mình tại Premier League</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="year">2008</div>
+                    <p>Quả bóng vàng đầu tiên cùng Qủy Đỏ, khẳng định đẳng cấp vươn tầm thế giới của anh</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="year">2009</div>
+                    <p>Kì chuyển nhượng bạc tỷ đến Real Madrid (£80 million)</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="year">2016</div>
+                    <p>Dẫn dắt Bồ Đào Nha tiến tới chức vô địch Euro với vai trò người tiên phong của đội</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="year">2018</div>
+                    <p>Chuyển nhượng đến Juventus và hành trình thống trị Serie A của anh Bảy</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="year">2021</div>
+                    <p>Cuộc tái ngộ cảm động ở mái nhà xưa Manchester United</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="year">2023</div>
+                    <p>Tham gia Al-Nassr FC ở giải Saudi Pro League, trở thành cầu thủ được trả lương cao nhất lịch sử</p>
+                </div>
+            </div>
+        </section>
+
+        </section>
+        <section class="highlights">
+
+        </section>
+        <section class="main">
+            <section class="counter">
+                <div style="display: flex; flex-direction: column; 
+                            justify-content: flex-end; 
+                            border: 1px solid black; 
+                            height: 200px; width: 200px; padding: 10px;">
+                    <div style="background-color: lightgreen; 
+                                padding: 10px; text-align: center;">
+                        Bottom Content
+                    </div>
+                </div>
+            </section>
+        </section>
+
+          
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        // Animate statistics
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const steps = 50;
+            const increment = target / steps;
+            let current = 0;
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    stat.textContent = Math.floor(current);
+                    setTimeout(updateCounter, duration / steps);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        });
+
+        // Timeline animation on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        const handleScroll = () => {
+            timelineItems.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+    </script>
+</body>
+</html>
