@@ -1,2 +1,1 @@
-# TheDuckIsRight.github.io
-a place for testing and learning new features
+tải lại file đi, rồi check thử cái github.io ở bên phải
