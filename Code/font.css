@@ -1,0 +1,11 @@
+.smooth {
+    -webkit-font-smoothing: antialiased;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@font-face { font-family: Stangith; src: url('/Components/Fonts/Stangith/stangith.otf'); }
+@font-face { font-family: Branch; src: url('/Components/Fonts/Branch/Branch.otf'); }
+@font-face { font-family: Ficoria; src: url('/Components/Fonts/Ficoria/Ficoria.otf'); }   
