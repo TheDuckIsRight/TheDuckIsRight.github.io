@@ -54,8 +54,7 @@
     <link rel="stylesheet" href="/Code/header.css" type="text/CSS">
     <link rel="stylesheet" href="/Code/stats.css" type="text/CSS">
     <link rel="stylesheet" href="/Code/timeline.css" type="text/CSS">
-
-    <!--  Javascript -->    
+    <link rel="stylesheet" href="/Code/slider.css" type="text/CSS">
 
     <!--  Title decoration  -->
     <title>CR7 HALL OF FAME</title>
@@ -92,7 +91,10 @@
                         <h2 class="stat-description">Champions League</h2>
                         <div class="stat-number" data-target="5">0</div>
                     </div>
-                    <div class="stat-card-back">test</div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Số Hattrick</h2>
+                        <div class="stat-number" data-target="66">0</div>                        
+                    </div>
                 </div></div>
                 <div class="stat-card">
                 <div class="stat-card-inner">
@@ -100,7 +102,10 @@
                         <h2 class="stat-description">Ballon d'Or</h2>
                         <div class="stat-number" data-target="5">0</div>
                     </div>
-                    <div class="stat-card-back">test</div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Số bàn đá phạt</h2>
+                        <div class="stat-number" data-target="64">0</div>
+                    </div>
                 </div></div>
                 <div class="stat-card">
                 <div class="stat-card-inner">
@@ -108,7 +113,10 @@
                         <h2 class="stat-description">Bàn thắng quốc tế</h2>
                         <div class="stat-number" data-target="135">0</div>
                     </div>
-                    <div class="stat-card-back">test</div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Đánh đầu</h2>
+                        <div class="stat-number" data-target="154">0</div>
+                    </div>
                 </div></div>
             </div>
         </section>
@@ -162,21 +170,27 @@
         <section class="highlights">
 
         </section>
-        <section class="main">
-            <section class="counter">
-                <div style="display: flex; flex-direction: column; 
-                            justify-content: flex-end; 
-                            border: 1px solid black; 
-                            height: 200px; width: 200px; padding: 10px;">
-                    <div style="background-color: lightgreen; 
-                                padding: 10px; text-align: center;">
-                        Bottom Content
-                    </div>
+        <section class="highlights">
+            <div class="slider-container">
+                <div class="indicator">HIGHTLIGHTS</div>
+                <div class="slider">
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-Sporting_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-ManUtd_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-RealMadrid_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-Juventus_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-AlNassr_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="/Components/Highlights/CR7_WebsiteHighlights-Portugal_desktop.mp4" muted loop></video></div>
                 </div>
-            </section>
+                <div class="custom-scrollbar">
+                    <div class="scroll-indicator active"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                </div>
+            </div>
         </section>
-
-          
     </main>
     <footer>
 
@@ -229,5 +243,6 @@
         window.addEventListener('scroll', handleScroll);
         handleScroll(); // Initial check
     </script>
+    <script src="/Code/slider.js"></script>
 </body>
 </html>
